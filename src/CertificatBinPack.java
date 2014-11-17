@@ -4,7 +4,7 @@ import java.util.Random;
  * La notion de certificat pour le problème Bin_Pack
  */
 public class CertificatBinPack implements Certificat {
-	
+
 	private PblBinPack pb; // le problème associé au certificat
 	private int certif[];
 
@@ -50,7 +50,7 @@ public class CertificatBinPack implements Certificat {
 	public void alea() {
 		int max = pb.get_nb_sacs();
 		Random r = new Random();
-		
+
 		for (int i = 0; i < certif.length; i++) {
 			certif[i] = r.nextInt(max);
 		}
@@ -59,6 +59,7 @@ public class CertificatBinPack implements Certificat {
 	/**
 	 * Indique à l'utilisateur dans quel sac mettre chaque objet.
 	 */
+	@Override
 	public void affiche() {
 		for (int i = 0; i < certif.length; i++) {
 			System.out.println("Mettre l'objet " + i + " dans le sac "
