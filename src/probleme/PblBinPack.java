@@ -5,10 +5,10 @@ package probleme;
  */
 public class PblBinPack extends PblDec {
 
-	private int nb_objets; // nb d’objets
-	private int poids[]; // poids des objets
-	private int cap; // capacité du sac
-	private int nb_sacs; // nb de sacs
+	private final int nb_objets; // nb d’objets
+	private final int poids[]; // poids des objets
+	private final int cap; // capacité du sac
+	private final int nb_sacs; // nb de sacs
 
 	// =========================== Constructeurs ============================
 
@@ -65,4 +65,17 @@ public class PblBinPack extends PblDec {
 		certif.affiche();
 		return certif.correct();
 	}
+
+	@Override
+	public String toString() {
+		String retour = "";
+
+		retour += this.nb_sacs + "sacs de taille " + this.cap + "\n";
+		retour += this.nb_objets + " objets\n";
+		for (int i = 0; i < poids.length; i++)
+			retour += "L'objet n°" + i + " pèse " + poids[i] + "\n";
+
+		return retour;
+	}
+
 }
