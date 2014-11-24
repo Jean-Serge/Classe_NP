@@ -43,9 +43,8 @@ public class CertificatBinPack implements Certificat {
 
 	@Override
 	public boolean estDernier() {
-		final int nbObj = this.pb.get_nb_objets();
 		for (int i = 0; i < this.certif.length; i++) {
-			if (this.certif[i] < nbObj)
+			if (this.certif[i] < this.pb.get_nb_sacs())
 				return false;
 		}
 		return true;
@@ -53,7 +52,7 @@ public class CertificatBinPack implements Certificat {
 
 	@Override
 	public void next() {
-		final int k = this.pb.get_nb_objets();
+		final int k = this.pb.get_nb_sacs() - 1;
 		int i = k - 1;
 		this.certif[i]++;
 		while ((i >= 0) && (this.certif[i] >= 4)) {
