@@ -31,8 +31,11 @@ public class CertificatBinPack implements Certificat {
 		}
 
 		for (int i = 0; i < certif.length; i++) {
+			if (certif[i] > this.pb.get_nb_sacs() - 1)
+				return false;
 			// On retire le poids de l'objet du sac où il est mit
 			sac[certif[i]] += poids[i];
+
 			// Si la capacité du sac est dépassée, le certificat est invalide
 			if (sac[certif[i]] > cap)
 				return false;

@@ -4,7 +4,7 @@ import probleme.PblBinPack;
 
 public class Test_BinPack {
 
-	private static final String path = "../donnees/data BinPack/exemple";
+	private static final String path = "donnees/data BinPack/exemple";
 
 	public static void main(String[] args) {
 		LireProblemeBinPack lecture;
