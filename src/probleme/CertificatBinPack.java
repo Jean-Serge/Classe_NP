@@ -7,8 +7,8 @@ import java.util.Random;
  */
 public class CertificatBinPack implements Certificat {
 
-	private PblBinPack pb; // le problème associé au certificat
-	private int certif[];
+	private final PblBinPack pb; // le problème associé au certificat
+	private final int certif[];
 
 	public CertificatBinPack(PblBinPack pb) {
 		this.pb = pb;
@@ -21,9 +21,9 @@ public class CertificatBinPack implements Certificat {
 	 */
 	@Override
 	public boolean correct() {
-		int sac[] = new int[certif.length];
-		int cap = pb.get_cap();
-		int poids[] = pb.getPoids();
+		final int sac[] = new int[certif.length];
+		final int cap = pb.get_cap();
+		final int poids[] = pb.getPoids();
 
 		// On initialise tous les sacs à leur capacité max
 		for (int i = 0; i < certif.length; i++) {
@@ -43,15 +43,31 @@ public class CertificatBinPack implements Certificat {
 
 	@Override
 	public boolean estDernier() {
+		final int nbObj = this.pb.get_nb_objets();
+		for (int i = 0; i < this.certif.length; i++) {
+			if (this.certif[i] < nbObj)
+				return false;
+		}
+		return true;
+	}
 
-		// TODO Auto-generated method stub
-		return false;
+	@Override
+	public void next() {
+		final int k = this.pb.get_nb_objets();
+		int i = k - 1;
+		this.certif[i]++;
+		while ((i >= 0) && (this.certif[i] >= 4)) {
+			this.certif[i] = 0;
+			this.certif[i - 1]++;
+			i--;
+		}
+
 	}
 
 	@Override
 	public void alea() {
-		int max = pb.get_nb_sacs();
-		Random r = new Random();
+		final int max = pb.get_nb_sacs();
+		final Random r = new Random();
 
 		for (int i = 0; i < certif.length; i++) {
 			certif[i] = r.nextInt(max);

@@ -43,24 +43,28 @@ public class PblBinPack extends PblDec {
 	/**
 	 * Retourne Vrai ssi il existe une mise en sachets possible, i.e. si
 	 * l’instance du pb est positive.
-	 * 
+	 *
 	 * @return true ssi il existe une mise en sachet possible
 	 */
 	public boolean aUneSolution() {
-		Certificat certif = new CertificatBinPack(this);
-		certif.alea();
-		certif.affiche();
-		return certif.correct();
+		final Certificat certif = new CertificatBinPack(this);
+		while (!certif.estDernier()) {
+			if (certif.correct()) {
+				certif.affiche();
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
 	 * Teste au hasard une mise en sachets et retourne Vrai si elle est valide
 	 * chaque mise en sachets doit pouvoir être générée par une exécution.
-	 * 
+	 *
 	 * @return true si la mise en sachet générée est valide
 	 */
 	public boolean aUneSolutionNonDéterministe() {
-		Certificat certif = new CertificatBinPack(this);
+		final Certificat certif = new CertificatBinPack(this);
 		certif.alea();
 		certif.affiche();
 		return certif.correct();
