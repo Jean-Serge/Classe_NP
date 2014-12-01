@@ -9,12 +9,12 @@ public class MainTest {
 		final PblBinPack pb = new PblBinPack(4, poid, 3, 3);
 		final Certificat certif = new CertificatBinPack(pb);
 
-		System.out.println(certif.estDernier());
 		while (!certif.estDernier()) {
 			certif.affiche();
-			System.out.println("\n");
 			certif.next();
 		}
+		// System.out.println(certif.estDernier());
+		// pb.aUneSolution();
 	}
 
 }

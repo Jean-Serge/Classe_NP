@@ -43,7 +43,7 @@ public class PblBinPack extends PblDec {
 	/**
 	 * Retourne Vrai ssi il existe une mise en sachets possible, i.e. si
 	 * l’instance du pb est positive.
-	 *
+	 * 
 	 * @return true ssi il existe une mise en sachet possible
 	 */
 	public boolean aUneSolution() {
@@ -53,14 +53,15 @@ public class PblBinPack extends PblDec {
 				certif.affiche();
 				return true;
 			}
+			certif.next();
 		}
-		return false;
+		return certif.correct();
 	}
 
 	/**
 	 * Teste au hasard une mise en sachets et retourne Vrai si elle est valide
 	 * chaque mise en sachets doit pouvoir être générée par une exécution.
-	 *
+	 * 
 	 * @return true si la mise en sachet générée est valide
 	 */
 	public boolean aUneSolutionNonDéterministe() {
@@ -74,7 +75,7 @@ public class PblBinPack extends PblDec {
 	public String toString() {
 		String retour = "";
 
-		retour += this.nb_sacs + "sacs de taille " + this.cap + "\n";
+		retour += this.nb_sacs + " sacs de taille " + this.cap + "\n";
 		retour += this.nb_objets + " objets\n";
 		for (int i = 0; i < poids.length; i++)
 			retour += "L'objet n°" + i + " pèse " + poids[i] + "\n";
