@@ -1,5 +1,8 @@
 package probleme;
 
+import certificat.Certificat;
+import certificat.CertificatBinPack;
+
 /**
  * La classe des problèmes BinPack
  */
