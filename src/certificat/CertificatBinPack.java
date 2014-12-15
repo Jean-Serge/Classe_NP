@@ -1,6 +1,8 @@
-package probleme;
+package certificat;
 
 import java.util.Random;
+
+import probleme.PblBinPack;
 
 /**
  * La notion de certificat pour le problème Bin_Pack

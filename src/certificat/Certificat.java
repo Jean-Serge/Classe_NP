@@ -1,4 +1,4 @@
-package probleme;
+package certificat;
 
 public interface Certificat {
 
