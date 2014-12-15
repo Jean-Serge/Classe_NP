@@ -2,17 +2,17 @@ package test;
 
 import probleme.PblDec;
 
-public class Test_BinPack {
+public class Test_Partition {
 
-	private static final String path = "donnees/data BinPack/exemple";
+	private static final String path = "donnees/data Reduction/exPartition";
 
 	public static void main(String[] args) {
 		LireProbleme lecture;
 		PblDec pb;
-		for (int i = 1; i <= 6; i++) {
+		for (int i = 1; i <= 4; i++) {
 			System.out
 					.println("===================================================================");
-			lecture = new LireProblemeBinPack(path + i);
+			lecture = new LireProblemePartition(path + i);
 			pb = lecture.determinerProbleme();
 			System.out.println(pb.toString());
 
@@ -25,4 +25,5 @@ public class Test_BinPack {
 					.println("===================================================================");
 		}
 	}
+
 }

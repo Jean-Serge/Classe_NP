@@ -65,7 +65,7 @@ Q4.2)
 	BIN PACK est au moins NP-dur.
 
 Q4.3)
-
+	Réduction implémentée.
 
 Q5)
 ---

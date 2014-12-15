@@ -1,5 +1,5 @@
-import probleme.Certificat;
-import probleme.CertificatBinPack;
+import certificat.Certificat;
+import certificat.CertificatBinPack;
 import probleme.PblBinPack;
 
 public class MainTest {
