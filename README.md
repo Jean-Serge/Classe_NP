@@ -76,3 +76,5 @@ Q5.2)
 	- la capacité des sacs sera c
 	- il y aura 2 sacs
 	- il y aura n entiers de poid xn
+
+(fin du travail réalisé)

@@ -1,18 +1,18 @@
 package test;
 
-import probleme.PblBinPack;
 import probleme.PblDec;
+import probleme.PblPartition;
 
-public class LireProblemeBinPack extends LireProbleme {
+public class LireProblemePartition extends LireProbleme {
 
-	public LireProblemeBinPack(String pathFilename) {
+	public LireProblemePartition(String pathFilename) {
 		super(pathFilename);
 	}
 
 	@Override
 	public PblDec determinerProbleme() {
 		PblDec pb;
-		int nb_sacs, nb_objets, cap;
+		int nb_objets;
 		int[] poids;
 
 		nb_objets = lire_int();
@@ -20,10 +20,8 @@ public class LireProblemeBinPack extends LireProbleme {
 		for (int j = 0; j < poids.length; j++) {
 			poids[j] = lire_int();
 		}
-		nb_sacs = lire_int();
-		cap = lire_int();
 
-		pb = new PblBinPack(nb_objets, poids, cap, nb_sacs);
+		pb = new PblPartition(nb_objets, poids);
 		return pb;
 	}
 }
